@@ -2,19 +2,19 @@ import credentials
 import requests
 import json
 
-def send_message(message):
+def send_message(phone_number, message):
     headers = {
         'Authorization': 'Bearer ' + get_token(),
     }
 
     json_data = {
         'messaging_product': 'whatsapp',
-        'to': '+33768281173',
+        'to': phone_number,
         'type': 'template',
         'template': {
             'name': 'hello_world',
             'language': {
-                'code': 'en_US',
+                'code': 'fr_FR',
             },
         },
     }
